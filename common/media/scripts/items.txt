@@ -1,0 +1,84 @@
+module ZombieChips
+{
+    imports
+    {
+        Base
+    }
+
+    /***************************
+     * RAW POTATO CHIPS
+     ***************************/
+    item RawPotatoChips
+    {
+        Type = Food,
+        DisplayName = Raw Potato Chips,
+        Icon = Crisps,
+        Weight = 0.3,
+        DaysFresh = 2,
+        DaysTotallyRotten = 4,
+        HungerChange = -5,
+        Calories = 120,
+        Carbohydrates = 15,
+        Lipids = 5,
+        Proteins = 2,
+        ThirstChange = 5,
+        UnhappyChange = 10,
+        Packaged = FALSE,
+        Poison = FALSE,
+        PoisonDetectionLevel = 1,
+        UseForPoison = 0,
+        IsCookable = TRUE,
+        MinutesToCook = 30,
+        MinutesToBurn = 45,
+        ReplaceOnCooked = ZombieChips.CookedPotatoChips,
+        CustomEatSound = EatingChips,
+        EvolvedRecipe = Stir fry:20,
+        WorldStaticModel = Crisps,
+    }
+
+    /***************************
+     * COOKED POTATO CHIPS
+     ***************************/
+    item CookedPotatoChips
+    {
+        Type = Food,
+        DisplayName = Cooked Potato Chips,
+        Icon = Crisps2,
+        Weight = 0.2,
+        DaysFresh = 3,
+        DaysTotallyRotten = 6,
+        HungerChange = -15,
+        Calories = 720,
+        Carbohydrates = 72,
+        Lipids = 45,
+        Proteins = 4.5,
+        ThirstChange = 15,
+        UnhappyChange = -5,
+        Packaged = FALSE,
+        Poison = FALSE,
+        CustomEatSound = EatingChips,
+        WorldStaticModel = Crisps2,
+    }
+
+    /***************************
+     * ZOMBIE APOCA-CHIPS (Final Product)
+     ***************************/
+    item ZombieApocaChips
+    {
+        Type = Food,
+        DisplayName = Zombie Apoca-Chips,
+        Icon = Crisps3,
+        Weight = 0.2,
+        HungerChange = -15,
+        Calories = 720,
+        Carbohydrates = 72,
+        Lipids = 45,
+        Proteins = 4.5,
+        ThirstChange = 15,
+        UnhappyChange = -5,
+        Packaged = TRUE,
+        Poison = FALSE,
+        CustomEatSound = EatingChips,
+        WorldStaticModel = Crisps3,
+    }
+}

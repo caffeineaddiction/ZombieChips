@@ -1,0 +1,37 @@
+module ZombieChips
+{
+    imports
+    {
+        Base
+    }
+
+    /***************************
+     * SLICE POTATO INTO CHIPS
+     ***************************/
+    recipe Slice Potato Into Chips
+    {
+        keep KnifeParing/ButterKnife/HuntingKnife/KitchenKnife/Machete/HandAxe/Axe/MeatCleaver/Scalpel,
+        Potato=2,
+        BakingTray,
+        VegetableOil=70,
+
+        Result: ZombieChips.RawPotatoChips,
+        Time: 30.0,
+        Category: Cooking,
+        OnGiveXP: Give10CookingXP,
+    }
+
+    /***************************
+     * PACKAGE POTATO CHIPS
+     ***************************/
+    recipe Package Potato Chips
+    {
+        ZombieChips.CookedPotatoChips,
+        PlasticBag/GarbageBag,
+
+        Result: ZombieChips.ZombieApocaChips,
+        Time: 10.0,
+        Category: Cooking,
+        OnCreate: ReturnBakingTray_OnCreate,
+    }
+}
