@@ -8,30 +8,62 @@ module ZombieChips
     /***************************
      * SLICE POTATO INTO CHIPS
      ***************************/
-    recipe Slice Potato Into Chips
+    craftRecipe SlicePotatoIntoChips
     {
-        keep KnifeParing/ButterKnife/HuntingKnife/KitchenKnife/Machete/HandAxe/Axe/MeatCleaver/Scalpel,
-        Potato=2,
-        BakingTray,
-        VegetableOil=70,
-
-        Result: ZombieChips.RawPotatoChips,
-        Time: 30.0,
-        Category: Cooking,
-        OnGiveXP: Give10CookingXP,
+        timedAction = Making,
+        Time = 30,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        inputs
+        {
+            item 1 tags[DullKnife;SharpKnife;MeatCleaver] mode:keep flags[MayDegradeLight],
+            item 36 [Base.Potato],
+            item 1 [Base.BakingTray] mode:destroy,
+            item 2 tags[Oil],
+        }
+        outputs
+        {
+            item 1 ZombieChips.RawPotatoChips,
+        }
     }
 
     /***************************
      * PACKAGE POTATO CHIPS
      ***************************/
-    recipe Package Potato Chips
+    craftRecipe PackagePotatoChips
     {
-        ZombieChips.CookedPotatoChips,
-        PlasticBag/GarbageBag,
+        timedAction = Making,
+        Time = 10,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        inputs
+        {
+            item 1 [ZombieChips.CookedPotatoChips] mode:destroy,
+            item 1 [Base.Garbagebag;Base.Plasticbag;Base.GroceryBag1;Base.GroceryBag2;Base.GroceryBag3;Base.GroceryBag4;Base.GroceryBag5] mode:destroy,
+        }
+        outputs
+        {
+            item 1 ZombieChips.ZombieApocaChips,
+            item 1 Base.BakingTray,
+        }
+    }
 
-        Result: ZombieChips.ZombieApocaChips,
-        Time: 10.0,
-        Category: Cooking,
-        OnCreate: ReturnBakingTray_OnCreate,
+    /***************************
+     * SCRAPE BURNT CHIPS OFF TRAY
+     ***************************/
+    craftRecipe ScrapeBurntChipsOffTray
+    {
+        timedAction = Making,
+        Time = 5,
+        Tags = InHandCraft;Cooking,
+        category = Cooking,
+        inputs
+        {
+            item 1 [ZombieChips.BurntPotatoChips] mode:destroy,
+        }
+        outputs
+        {
+            item 1 Base.BakingTray,
+        }
     }
 }

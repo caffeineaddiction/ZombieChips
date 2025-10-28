@@ -12,7 +12,8 @@ module ZombieChips
     {
         Type = Food,
         DisplayName = Raw Potato Chips,
-        Icon = Crisps,
+        DisplayCategory = Food,
+        Icon = BakingTray_RollsDough,
         Weight = 0.3,
         DaysFresh = 2,
         DaysTotallyRotten = 4,
@@ -31,6 +32,7 @@ module ZombieChips
         MinutesToCook = 30,
         MinutesToBurn = 45,
         ReplaceOnCooked = ZombieChips.CookedPotatoChips,
+        ReplaceOnBurnt = ZombieChips.BurntPotatoChips,
         CustomEatSound = EatingChips,
         EvolvedRecipe = Stir fry:20,
         WorldStaticModel = Crisps,
@@ -43,7 +45,8 @@ module ZombieChips
     {
         Type = Food,
         DisplayName = Cooked Potato Chips,
-        Icon = Crisps2,
+        DisplayCategory = Food,
+        Icon = BakingTray_RollsCooked,
         Weight = 0.2,
         DaysFresh = 3,
         DaysTotallyRotten = 6,
@@ -56,6 +59,38 @@ module ZombieChips
         UnhappyChange = -5,
         Packaged = FALSE,
         Poison = FALSE,
+        IsCookable = TRUE,
+        MinutesToBurn = 15,
+        ReplaceOnBurnt = ZombieChips.BurntPotatoChips,
+        ReplaceOnUse = BakingTray,
+        CustomEatSound = EatingChips,
+        WorldStaticModel = Crisps2,
+    }
+
+    /***************************
+     * BURNT POTATO CHIPS
+     ***************************/
+    item BurntPotatoChips
+    {
+        Type = Food,
+        DisplayName = Burnt Potato Chips,
+        DisplayCategory = Food,
+        Icon = BakingTray_RollsCooked,
+        Weight = 0.2,
+        DaysFresh = 0,
+        DaysTotallyRotten = 3,
+        HungerChange = -5,
+        Calories = 100,
+        Carbohydrates = 20,
+        Lipids = 5,
+        Proteins = 1,
+        ThirstChange = 20,
+        UnhappyChange = 20,
+        Packaged = FALSE,
+        Poison = FALSE,
+        IsCookable = FALSE,
+        Burnt = TRUE,
+        ReplaceOnUse = BakingTray,
         CustomEatSound = EatingChips,
         WorldStaticModel = Crisps2,
     }
@@ -67,7 +102,8 @@ module ZombieChips
     {
         Type = Food,
         DisplayName = Zombie Apoca-Chips,
-        Icon = Crisps3,
+        DisplayCategory = Food,
+        Icon = Crisps,
         Weight = 0.2,
         HungerChange = -15,
         Calories = 720,
