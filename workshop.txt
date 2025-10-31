@@ -1,5 +1,5 @@
-version=.01
-id=tbd
+version=1
+id=YOUR_WORKSHOP_ID_HERE
 title=Zombie Apoca-Chips
 description=Craftable Potato Chips - Survive the apocalypse with a crispy snack! Adds craftable potato chips to Project Zomboid.
 visibility=public
