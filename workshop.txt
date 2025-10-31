@@ -1,0 +1,6 @@
+version=1
+id=3595535749
+title=Zombie Chips
+description=Craftable Potato Chips - Survive the apocalypse with a crispy snack! Adds craftable potato chips to Project Zomboid.
+tags=Build 41;Build 42
+visibility=public
